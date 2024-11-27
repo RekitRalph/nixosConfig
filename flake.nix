@@ -69,7 +69,7 @@
           };
         
           modules = [
-            ./hosts/starchy/configuration.nix
+            ./hosts/lappy/configuration.nix
             inputs.stylix.nixosModules.stylix
           
             home-manager.nixosModules.home-manager
