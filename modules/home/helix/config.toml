@@ -1,0 +1,15 @@
+theme = "dracula"
+
+[editor]
+auto-completion = true
+color-modes = true
+bufferline = "always"
+line-number = "relative"
+
+[editor.file-picker]
+hidden = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
