@@ -20,7 +20,7 @@
   ];
 
   networking.hostName = "lappy"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
 
   # Perform garbage collection weekly to maintain low disk usage
@@ -45,7 +45,7 @@
   nix.settings.auto-optimise-store = true;
 
   # Enable networking
-  # networking.networkmanager.enable = true;
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
