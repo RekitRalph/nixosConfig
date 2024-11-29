@@ -36,6 +36,7 @@
     unzip
     pandoc
     lazygit
+    file-roller
 
     gparted
     gedit # text editor

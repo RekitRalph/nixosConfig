@@ -68,7 +68,8 @@
     enable = true;
     shellAliases = {
       pp = "echo hello";
-      ls = "eza -lh --group-directories-first --color=always --icons=always ";
+      ll = "eza -lh --group-directories-first --color=always --icons=always ";
+      ls = "eza --group-directories-first --color=always --icons=always"; 
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
       fe = "hx \"$(fzf)\"";
     };
