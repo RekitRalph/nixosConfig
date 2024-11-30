@@ -58,6 +58,7 @@
     bibata-cursors # cursor theme (Bibata-Original-Ice)
     dracula-theme # color theme
     dracula-icon-theme # Icon theme
+    hackneyed # windows 3.x cursor theme
 
   ]) ++ (with pkgs-stable; [
     # calibre # use stable version of calibre
