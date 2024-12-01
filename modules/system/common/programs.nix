@@ -48,6 +48,7 @@
     pavucontrol
     usbutils
     hugo
+    solaar # logitech manager
 
    
     selectdefaultapplication # set default apps for files
