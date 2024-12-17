@@ -63,7 +63,7 @@
 
   ]) ++ (with pkgs-stable; [
     # calibre # use stable version of calibre
-    #libreoffice-fresh 
+    libreoffice-fresh 
   ]);
 
 

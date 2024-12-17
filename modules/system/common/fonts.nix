@@ -8,6 +8,8 @@
     dejavu_fonts
     vistafonts
     nerd-font-patcher
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.jetbrains-mono
+    # nerd-fonts.nerdfontssymbolsonly
+    # (nerdfonts.override { fonts = [ "JetBrainsMono" "NerdFontsSymbolsOnly" ]; })
   ];
 }
