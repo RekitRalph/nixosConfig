@@ -37,6 +37,7 @@
     pandoc
     lazygit
     file-roller
+    appimage-run # appimage interpreter
 
     gparted
     gedit # text editor

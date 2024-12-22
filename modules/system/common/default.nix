@@ -10,4 +10,8 @@
     ./programs.nix
     ./thunar.nix
   ];
+
+  # allow app-image programs to run. 
+  programs.appimage.binfmt = true;
+  
 }
