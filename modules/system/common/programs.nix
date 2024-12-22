@@ -38,6 +38,7 @@
     lazygit
     file-roller
     appimage-run # appimage interpreter
+    zoxide
 
     gparted
     gedit # text editor

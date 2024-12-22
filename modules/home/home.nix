@@ -62,7 +62,7 @@
     package = pkgs.vscodium;
   };
 
-
+  programs.yazi.enable = true;
 
   programs.bash = {
     enable = true;
@@ -73,6 +73,19 @@
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
       fe = "hx \"$(fzf)\"";
     };
+    initExtra = ''
+    # --- Yazi Setup ---
+    export EDITOR="hx"
+
+    function y() {
+      local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+      yazi "$@" --cwd-file="$tmp"
+      if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+      fi
+      rm -f -- "$tmp"
+    }
+    '';
   };
     
 
