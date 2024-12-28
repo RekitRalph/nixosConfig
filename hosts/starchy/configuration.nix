@@ -100,6 +100,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # waydroid emulation
+  virtualisation.waydroid.enable = true;
+
   # enable flatpak
   services.flatpak.enable = true;
 

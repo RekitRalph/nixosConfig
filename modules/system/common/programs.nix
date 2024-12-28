@@ -62,6 +62,7 @@
     dracula-theme # color theme
     dracula-icon-theme # Icon theme
     hackneyed # windows 3.x cursor theme
+    posy-cursors # posy cursors from youtube
 
   ]) ++ (with pkgs-stable; [
     # calibre # use stable version of calibre
