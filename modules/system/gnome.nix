@@ -10,10 +10,11 @@
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = true; # Start in X11
+    displayManager.gdm.wayland = true; # Start in X11 = false
     desktopManager.gnome.enable = true;
   };
 
+  services.displayManager.defaultSession = "gnome";
   programs.dconf.enable = true;
 
   # Tweaks
