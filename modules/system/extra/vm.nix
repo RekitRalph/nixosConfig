@@ -33,7 +33,7 @@
   services.spice-vdagentd.enable = true;
 
   # waydroid emulation
-  virtualisation.waydroid.enable = true;
+  # virtualisation.waydroid.enable = true;
 
   # Additional configurations and notes:
   # 1. You may need to adjust settings if you have an NVIDIA card or an RX 6800 series:
