@@ -51,6 +51,7 @@
     usbutils
     hugo
     solaar # logitech manager
+    scrcpy # android screen mirror
 
    
     selectdefaultapplication # set default apps for files
