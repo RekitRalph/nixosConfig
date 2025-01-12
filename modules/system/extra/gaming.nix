@@ -15,5 +15,6 @@
     heroic
     protontricks
     ryujinx
+    bottles
   ];
 }

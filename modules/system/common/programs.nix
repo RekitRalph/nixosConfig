@@ -14,6 +14,7 @@
     veracrypt # encrypted file archive
     vlc
     ungoogled-chromium # browser
+    qbittorrent
 
     # terminal #
     eza # ls replacement
@@ -34,8 +35,8 @@
     zip
     xz
     unzip
-    pandoc
-    lazygit
+    pandoc # convert to markdown format
+    lazygit # git gui
     file-roller
     appimage-run # appimage interpreter
     zoxide
