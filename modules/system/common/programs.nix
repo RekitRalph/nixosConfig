@@ -15,6 +15,7 @@
     vlc
     ungoogled-chromium # browser
     qbittorrent
+    protonvpn-gui
 
     # terminal #
     eza # ls replacement
