@@ -12,10 +12,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix ={
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #nixpkgs.follows = "nixos-cosmic/nixpkgs";
+   # nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+
+    # stylix ={
+    #   url = "github:danth/stylix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = inputs@{ 
@@ -32,6 +35,7 @@
         system = "x86_64-linux";
 
         specialArgs = {
+          inherit inputs;
           pkgs-stable = import nixpkgs-stable {
             inherit system;
             config.allowUnfree = true;
@@ -40,7 +44,8 @@
         
         modules = [
           ./hosts/starchy/configuration.nix
-          inputs.stylix.nixosModules.stylix
+          # inputs.stylix.nixosModules.stylix
+          
           
           home-manager.nixosModules.home-manager
           {
@@ -70,7 +75,7 @@
         
           modules = [
             ./hosts/lappy/configuration.nix
-            inputs.stylix.nixosModules.stylix
+            # inputs.stylix.nixosModules.stylix
           
             home-manager.nixosModules.home-manager
             {
