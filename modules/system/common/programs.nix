@@ -9,6 +9,7 @@
     youtube-music    
     calibre # ebooks
     discord
+    vesktop
     # libreoffice-fresh # office suite
     mumble
     veracrypt # encrypted file archive
@@ -16,6 +17,7 @@
     ungoogled-chromium # browser
     qbittorrent
     protonvpn-gui
+    picocrypt # encryption file tool, alternative to veracrypt
 
     # terminal #
     eza # ls replacement

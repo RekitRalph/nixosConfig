@@ -15,8 +15,8 @@
     ./../../modules/system/extra/vm.nix
     ./../../modules/system/extra/nvidia.nix  
     
-    ./../../modules/system/gnome.nix
-
+    #./../../modules/system/gnome.nix
+    ./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
     # ./../../modules/hyprland.nix
     # ./../../modules/xfce.nix
@@ -95,7 +95,9 @@
     user = "evan";
   };
 
-
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "*";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
