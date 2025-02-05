@@ -8,8 +8,7 @@
     bitwarden-desktop
     youtube-music    
     calibre # ebooks
-    discord
-    vesktop
+    vesktop # discord replacement
     # libreoffice-fresh # office suite
     mumble
     veracrypt # encrypted file archive

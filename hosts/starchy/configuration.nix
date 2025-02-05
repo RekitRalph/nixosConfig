@@ -15,8 +15,8 @@
     ./../../modules/system/extra/vm.nix
     ./../../modules/system/extra/nvidia.nix  
     
-    #./../../modules/system/gnome.nix
-    ./../../modules/system/cosmic.nix
+    ./../../modules/system/gnome.nix
+    #./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
     # ./../../modules/hyprland.nix
     # ./../../modules/xfce.nix
@@ -82,7 +82,7 @@
   users.users.evan = {
     isNormalUser = true;
     description = "evan";
-    extraGroups = [ "networkmanager" "wheel" "audio"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "uucp" "dialout"]; # uucp and dialout for maxx stick
     packages = with pkgs;
       [
         #  thunderbird
@@ -119,7 +119,8 @@
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a878", MODE:="0777" 
     SUBSYSTEM=="usb", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a878", MODE:="0777" 
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a879", MODE:="0777" 
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a879", MODE:="0777" 
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a879", MODE:="0777"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="104d", MODE:="0777"
   '';
 
 
