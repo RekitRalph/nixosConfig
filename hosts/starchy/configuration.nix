@@ -16,7 +16,7 @@
     ./../../modules/system/extra/nvidia.nix  
     
     ./../../modules/system/gnome.nix
-    #./../../modules/system/cosmic.nix
+    # ./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
     # ./../../modules/hyprland.nix
     # ./../../modules/xfce.nix

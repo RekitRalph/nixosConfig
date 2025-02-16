@@ -9,6 +9,7 @@
     youtube-music    
     calibre # ebooks
     vesktop # discord replacement
+    discord
     # libreoffice-fresh # office suite
     mumble
     veracrypt # encrypted file archive
@@ -77,6 +78,8 @@
   # VS Codium direnv
   programs.direnv.enable = true;
 
+  # fan control software
+  programs.coolercontrol.enable = true;
 
 
   # Enable LocalSend to send files from phone to computer.

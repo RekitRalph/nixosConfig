@@ -14,6 +14,9 @@
   #boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
   boot.initrd.kernelModules = [ "nvidia" ];
   boot.blacklistedKernelModules = ["nouveau"];
+
+  # coolercontrol nvidia support
+  programs.coolercontrol.nvidiaSupport = true;
   
   hardware.nvidia = {
 
