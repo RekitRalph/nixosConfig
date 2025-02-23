@@ -1,4 +1,4 @@
-{config, pkgs, pkgs-stable, ...}:
+{config, pkgs, pkgs-stable,  ...}:
 {
 
   # List packages installed in system profile. To search, run:
