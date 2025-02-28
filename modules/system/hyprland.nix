@@ -51,7 +51,7 @@
     swayimg #img viewer
     polkit
     hyprcursor
-    hyprgui
+    hyprgui # hyperland gui config
     ];
     #enable security prompts
     security.polkit.enable = true;

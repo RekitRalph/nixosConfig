@@ -43,6 +43,7 @@
     file-roller
     appimage-run # appimage interpreter
     zoxide
+    nvd
 
     gparted
     gedit # text editor
@@ -68,6 +69,8 @@
     dracula-icon-theme # Icon theme
     hackneyed # windows 3.x cursor theme
     posy-cursors # posy cursors from youtube
+    tokyonight-gtk-theme #Tokyo Night color theme
+    colloid-gtk-theme # Colloid color theme
 
   ]) ++ (with pkgs-stable; [
     # calibre # use stable version of calibre
