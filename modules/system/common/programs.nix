@@ -18,6 +18,7 @@
     qbittorrent
     protonvpn-gui
     picocrypt # encryption file tool, alternative to veracrypt
+    kmymoney # Personal finance program
 
     # terminal #
     eza # ls replacement
@@ -83,6 +84,7 @@
 
   # fan control software
   programs.coolercontrol.enable = true;
+  programs.coolercontrol.nvidiaSupport = true;
 
 
   # Enable LocalSend to send files from phone to computer.
