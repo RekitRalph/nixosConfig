@@ -49,7 +49,7 @@
     gparted
     gedit # text editor
     kitty # terminal
-    mupdf # pdf reader
+    qpdfview # pdf reader
     qimgv # image viewer qt5
     unetbootin # create usb iso
     vscodium # code editor
