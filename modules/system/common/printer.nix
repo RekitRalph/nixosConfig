@@ -3,7 +3,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  services.printing.drivers = [ pkgs.hplip pkgs.hplipWithPlugin ];
+#  services.printing.drivers = [ pkgs.hplip pkgs.hplipWithPlugin ];
 
   # Autodiscovery of network printers
   services.avahi = {

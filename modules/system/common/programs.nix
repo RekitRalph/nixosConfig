@@ -19,6 +19,7 @@
     protonvpn-gui
     picocrypt # encryption file tool, alternative to veracrypt
     kmymoney # Personal finance program
+    realvnc-vnc-viewer
 
     # terminal #
     eza # ls replacement
