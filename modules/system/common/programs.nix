@@ -20,6 +20,7 @@
     picocrypt # encryption file tool, alternative to veracrypt
     kmymoney # Personal finance program
     realvnc-vnc-viewer
+    nautilus # Gnome File manager
 
     # terminal #
     eza # ls replacement
