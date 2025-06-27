@@ -61,6 +61,7 @@
     hugo
     solaar # logitech manager
     scrcpy # android screen mirror
+    helix # text editor 
 
    
     selectdefaultapplication # set default apps for files

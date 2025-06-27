@@ -12,13 +12,13 @@
    };
 
    # point to the helix config file in "/nixos/config/helix" 
-  xdg.configFile."helix/config.toml".source = 
-  config.lib.file.mkOutOfStoreSymlink 
-  "${config.home.homeDirectory}/nixos/modules/home/helix/config.toml";
+  #xdg.configFile."helix/config.toml".source = 
+  #config.lib.file.mkOutOfStoreSymlink 
+  #"${config.home.homeDirectory}/nixos/modules/home/helix/config.toml";
 
-  xdg.configFile."helix/languages.toml".source = 
-  config.lib.file.mkOutOfStoreSymlink 
-  "${config.home.homeDirectory}/nixos/modules/home/helix/languages.toml";
+  #xdg.configFile."helix/languages.toml".source = 
+  #config.lib.file.mkOutOfStoreSymlink 
+  #"${config.home.homeDirectory}/nixos/modules/home/helix/languages.toml";
       /*
       settings = {
          theme = "onedarker";
