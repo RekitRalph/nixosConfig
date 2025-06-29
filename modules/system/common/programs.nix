@@ -48,6 +48,7 @@
     appimage-run # appimage interpreter
     zoxide
     nvd
+    qdirstat # disk usage analyzer
 
     gparted
     gedit # text editor
