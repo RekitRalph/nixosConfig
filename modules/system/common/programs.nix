@@ -49,6 +49,7 @@
     zoxide
     nvd
     qdirstat # disk usage analyzer
+    # pywal16 # color generator based off walpaper
 
     gparted
     gedit # text editor
