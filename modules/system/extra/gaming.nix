@@ -9,12 +9,13 @@
   };
 
   programs.gamemode.enable = true;
-y
+
   environment.systemPackages = with pkgs; [
     lutris
     heroic
     protontricks
     ryujinx
+    mangohud
     goverlay
   ];
 }
