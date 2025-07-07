@@ -7,12 +7,10 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
   
-  services.xserver.enable = true;
-  services = {
-    displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = true; # Start in X11 = false
-    desktopManager.gnome.enable = true;
-  };
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+
+  # services.desktopManager.gnome.enable = true;
 
   services.displayManager.defaultSession = "gnome";
   programs.dconf.enable = true;

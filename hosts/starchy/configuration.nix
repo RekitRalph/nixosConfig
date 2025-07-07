@@ -13,7 +13,7 @@
     ./../../modules/system/common
     ./../../modules/system/extra/gaming.nix
     ./../../modules/system/extra/vm.nix
-    ./../../modules/system/extra/nvidia.nix  
+    #./../../modules/system/extra/nvidia.nix  
     
     ./../../modules/system/gnome.nix
     # ./../../modules/system/cosmic.nix
@@ -113,6 +113,13 @@
       flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo 
    '';
   };
+  
+   fileSystems."/mnt/drivetwo" = {
+   device = "/dev/disk/by-uuid/bf648e48-41e1-45cf-900a-1e96758b28c8";
+   fsType = "ext4";
+   options = [ "nofail"];
+ };
+
 
   # Udev rules for usb connect on browser on WLMOUSE software
   services.udev.extraRules = ''
@@ -123,7 +130,6 @@
     SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="104d", MODE:="0777"
     SUBSYSTEM=="usb", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="5055", MODE:="0777"
   '';
-
 
 
   # pulseaudio support for Mumble
