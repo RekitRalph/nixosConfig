@@ -64,6 +64,7 @@
     solaar # logitech manager
     scrcpy # android screen mirror
     helix # text editor 
+    lm_sensors # sensor for fan control
 
    
     selectdefaultapplication # set default apps for files
