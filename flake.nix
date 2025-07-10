@@ -12,18 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nixos-cosmic = {
-    #   url = "github:lilyinstarlight/nixos-cosmic";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    nixpkgs.follows = "nixos-cosmic/nixpkgs"; # NOTE: change "nixpkgs" to "nixpkgs-stable" to use stable NixOS release
-
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-    # stylix ={
-    #   url = "github:danth/stylix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
   outputs = inputs@{ 
@@ -31,7 +19,6 @@
     nixpkgs, 
     nixpkgs-stable,
     home-manager,
-    nixos-cosmic,
     ...
   }: {
     
@@ -51,15 +38,7 @@
         modules = [
           ./hosts/starchy/configuration.nix
           # inputs.stylix.nixosModules.stylix
-          
-          nixos-cosmic.nixosModules.default
-          {
-            nix.settings = {
-              substituters = [ "https://cosmic.cachix.org/" ];
-              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
-            };
-          }
-        
+                  
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

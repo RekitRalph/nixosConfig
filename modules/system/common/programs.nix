@@ -65,6 +65,8 @@
     scrcpy # android screen mirror
     helix # text editor 
     lm_sensors # sensor for fan control
+    lact # amd configure
+    micro # nano replacement text editor
 
    
     selectdefaultapplication # set default apps for files

@@ -24,7 +24,7 @@
 
   networking.hostName = "starchy"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
+  
 
   # Perform garbage collection weekly to maintain low disk usage
   nix.gc = {

@@ -12,5 +12,7 @@
 
   # Change the Kernel to xanmod
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  #boot.kernelPackages = pkgs.linuxPackages_latest; # regular kernel
+  boot.kernelParams = [ "usbcore.quirks=0853:0317:gki" ]; # fix for keyboard not working after boot
 
 }
