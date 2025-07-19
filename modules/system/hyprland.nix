@@ -21,8 +21,6 @@
     hardware = {
         # Opengl
         graphics.enable = true;
-        #Most wayland compositors need this
-        nvidia.modesetting.enable = true;
     };
 
     #For screen sharing
@@ -37,10 +35,12 @@
     swww # for wallpapers
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
+    hyprpolkitagent # It is required for GUI applications to be able to request elevated privileges.
     gvfs # virtual filesystem support Calibre
     xwayland
     nwg-look
     wofi #menu
+    # rofi # menu
     dunst #notification daemon
     libnotify
     meson
@@ -51,7 +51,6 @@
     swayimg #img viewer
     polkit
     hyprcursor
-    hyprgui # hyperland gui config
     ];
     #enable security prompts
     security.polkit.enable = true;

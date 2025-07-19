@@ -18,7 +18,7 @@
     ./../../modules/system/gnome.nix
     # ./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
-    # ./../../modules/hyprland.nix
+    #./../../modules/system/hyprland.nix
     # ./../../modules/xfce.nix
   ];
 

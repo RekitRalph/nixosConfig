@@ -17,9 +17,6 @@
 
   # stylix.targets.helix.enable = false;  
   
-  home.packages = with pkgs; [
-    # archives
-  ];
 
   gtk.cursorTheme = {
     package = pkgs.bibata-cursors;
@@ -63,6 +60,27 @@
   };
 
   programs.yazi.enable = true;
+
+  home.packages = [
+    # compares generations to see changes in rebuild.
+    (pkgs.writeShellScriptBin "compare" ''
+      gens=($(${pkgs.nix}/bin/nix-env --list-generations --profile /nix/var/nix/profiles/system | awk '{print $1}' | sort -n | tail -2))
+      if [ "''${#gens[@]}" -lt 2 ]; then
+        echo "Not enough generations found!"
+        exit 1
+      fi
+
+      link1="/nix/var/nix/profiles/system-''${gens[0]}-link"
+      link2="/nix/var/nix/profiles/system-''${gens[1]}-link"
+
+      if [ ! -e "$link1" ] || [ ! -e "$link2" ]; then
+        echo "One or both system generation links do not exist."
+        exit 1
+      fi
+
+      ${pkgs.nvd}/bin/nvd diff "$link1" "$link2"
+    '')
+  ];
 
   programs.bash = {
     enable = true;
