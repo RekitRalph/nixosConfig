@@ -21,7 +21,7 @@
     kmymoney # Personal finance program
     realvnc-vnc-viewer
     nautilus # Gnome File manager
-    
+    floorp # alternative firefox browser
 
     # terminal #
     eza # ls replacement
