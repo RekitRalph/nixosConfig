@@ -11,7 +11,7 @@
     ./kitty.nix
     # ./themes.nix
     # ./dconf.nix
-     ./helix
+     # ./helix
     # ./gtk.nix
   ];
 
@@ -27,6 +27,10 @@
   # point to the hyprland config file in "/nixos/config/helix"  
   xdg.configFile."hypr".source = 
   config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/hypr";
+
+
+  xdg.configFile."helix".source = 
+  config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/helix";
 
   # waybar config file
   xdg.configFile."waybar".source =

@@ -1,4 +1,4 @@
-theme = "solarized_dark"
+theme = "ao"
 
 [editor]
 auto-completion = true
@@ -13,3 +13,6 @@ hidden = false
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[keys.normal]
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
