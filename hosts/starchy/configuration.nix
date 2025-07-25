@@ -99,6 +99,10 @@
   xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   xdg.portal.config.common.default = "*";
 
+  services.lact.enable = true; # fan control service
+  hardware.amdgpu.overdrive.enable = true;
+
+  
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

@@ -6,6 +6,9 @@ programs.kitty = {
     enable = true;
     package = pkgs.kitty;
     themeFile = "Tomorrow_Night_Blue";
+    font = {
+      name = "Atkinson Hyperlegible Mono";
+    };
     settings = {
       confirm_os_window_close = 0; 
       copy_on_select = "clipboard";
