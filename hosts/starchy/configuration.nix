@@ -118,8 +118,8 @@
    '';
   };
   
-   fileSystems."/mnt/drivetwo" = {
-   device = "/dev/disk/by-uuid/bf648e48-41e1-45cf-900a-1e96758b28c8";
+   fileSystems."/media/misc" = {
+   device = "/dev/disk/by-uuid/c4ed7cf6-09dd-4778-b65d-3aa1099ec134";
    fsType = "ext4";
    options = [ "nofail"];
  };

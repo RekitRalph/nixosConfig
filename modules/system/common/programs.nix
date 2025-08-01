@@ -21,6 +21,7 @@
     kmymoney # Personal finance program
     realvnc-vnc-viewer
     nautilus # Gnome File manager
+    rhythmbox # Music player
 
     # terminal #
     eza # ls replacement
