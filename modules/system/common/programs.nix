@@ -60,7 +60,6 @@
     vscodium # code editor
     pavucontrol
     usbutils
-    hugo
     solaar # logitech manager
     scrcpy # android screen mirror
     helix # text editor 
