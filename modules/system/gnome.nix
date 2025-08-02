@@ -28,7 +28,8 @@
     dash-to-panel
     dash-to-dock
     extension-list
-    pop-shell
+    # pop-shell
+    paperwm # scrolling wm for gnome
   ]);
 
 }
