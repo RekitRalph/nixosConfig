@@ -4,9 +4,12 @@
   services.printing.enable = true;
 
   services.printing.drivers = [ 
-  pkgs.hplip 
-  pkgs.hplipWithPlugin 
+  pkgs.brlaser # drivers for brother printers
+  pkgs.brgenml1lpr
+  pkgs.brgenml1cupswrapper
   ];
+
+  # nix shell nixpkgs#system-config-printer for gui cups management.
 
   # Autodiscovery of network printers
   services.avahi = {
