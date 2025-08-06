@@ -15,4 +15,6 @@
   #boot.kernelPackages = pkgs.linuxPackages_latest; # regular kernel
   boot.kernelParams = [ "usbcore.quirks=0853:0317:gki" ]; # fix for keyboard not working after boot
 
+  # boot.extraModulePackages = with config.boot.kernelPackages; [ nct6687d ];
+  boot.kernelModules = [ "nct6687" ];
 }

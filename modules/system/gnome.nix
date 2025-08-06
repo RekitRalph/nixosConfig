@@ -29,7 +29,10 @@
     dash-to-dock
     extension-list
     # pop-shell
-    paperwm # scrolling wm for gnome
+    # paperwm # scrolling wm for gnome
+    tiling-shell
+    tiling-assistant
+    auto-move-windows
   ]);
 
 }

@@ -71,7 +71,7 @@
     selectdefaultapplication # set default apps for files
     filezilla
     wlvncc # wayland vnc client
-
+    linuxKernel.packages.linux_xanmod_latest.nct6687d
     # Theme #
     bibata-cursors # cursor theme (Bibata-Original-Ice)
     dracula-theme # color theme
