@@ -14,7 +14,7 @@
     lutris
     heroic
     protontricks
-    ryujinx
+    ryubing
     mangohud
     goverlay
   ];

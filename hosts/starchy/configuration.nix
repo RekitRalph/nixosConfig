@@ -16,6 +16,7 @@
     #./../../modules/system/extra/nvidia.nix  
     
     ./../../modules/system/gnome.nix
+    # ./../../modules/system/kde.nix
     # ./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
     #./../../modules/system/hyprland.nix
@@ -123,6 +124,8 @@
    fsType = "ext4";
    options = [ "nofail"];
  };
+
+  zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
 
 
   # Udev rules for usb connect on browser on WLMOUSE software

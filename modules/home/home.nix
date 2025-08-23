@@ -7,7 +7,7 @@
   # if home manage fails because of config file run "journalctl -e --unit home-manager-evan.service"
  
   imports = [
-    ./omp.nix
+    #./omp.nix
     ./kitty.nix
     # ./themes.nix
     # ./dconf.nix

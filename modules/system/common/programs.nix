@@ -16,7 +16,8 @@
     vlc
     ungoogled-chromium # browser
     qbittorrent
-    protonvpn-gui
+    # protonvpn-gui
+    #ivpn-ui
     picocrypt # encryption file tool, alternative to veracrypt
     kmymoney # Personal finance program
     realvnc-vnc-viewer
@@ -84,7 +85,7 @@
   ]) ++ (with pkgs-stable; [
     # calibre # use stable version of calibre
     libreoffice-fresh 
-    wpsoffice
+    # wpsoffice
   ]);
 
 
