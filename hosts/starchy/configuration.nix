@@ -15,8 +15,8 @@
     ./../../modules/system/extra/vm.nix
     #./../../modules/system/extra/nvidia.nix  
     
-    ./../../modules/system/gnome.nix
-    # ./../../modules/system/kde.nix
+    # ./../../modules/system/gnome.nix
+    ./../../modules/system/kde.nix
     # ./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
     #./../../modules/system/hyprland.nix
@@ -33,6 +33,17 @@
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      vulkan-loader
+      mesa 
+      vulkan-validation-layers
+    ];
+  };
+
 
 /*     programs.nh = {
     enable = true;

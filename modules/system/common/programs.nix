@@ -16,13 +16,15 @@
     vlc
     ungoogled-chromium # browser
     qbittorrent
-    # protonvpn-gui
+    protonvpn-gui
+    mullvad-vpn
     #ivpn-ui
     picocrypt # encryption file tool, alternative to veracrypt
-    kmymoney # Personal finance program
+    # kmymoney # Personal finance program
     realvnc-vnc-viewer
     nautilus # Gnome File manager
     rhythmbox # Music player
+    conky
 
     # terminal #
     eza # ls replacement
@@ -93,7 +95,7 @@
   programs.direnv.enable = true;
 
   # fan control software
-  programs.coolercontrol.enable = true;
+  # programs.coolercontrol.enable = true;
 
 
   # Enable LocalSend to send files from phone to computer.
