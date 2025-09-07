@@ -17,7 +17,6 @@
     ungoogled-chromium # browser
     qbittorrent
     protonvpn-gui
-    mullvad-vpn
     #ivpn-ui
     picocrypt # encryption file tool, alternative to veracrypt
     # kmymoney # Personal finance program
@@ -93,6 +92,9 @@
 
   # VS Codium direnv
   programs.direnv.enable = true;
+  # Mullvad VPN
+  services.mullvad-vpn.enable = true;
+  # services.mullvad-vpn.packages = {pkgs.mullvad-vpn;
 
   # fan control software
   # programs.coolercontrol.enable = true;
