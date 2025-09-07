@@ -21,6 +21,13 @@
 
   networking.hostName = "lappy"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  
+  services.tailscale.enable = true;
+
+  # Optional (default: 41641):
+  services.tailscale.port = 12345;
+
+  networking.firewall.allowedUDPPorts = [ config.services.tailscale.port ];
 
 
   # Perform garbage collection weekly to maintain low disk usage
