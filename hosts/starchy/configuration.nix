@@ -13,6 +13,7 @@
     ./../../modules/system/common
     ./../../modules/system/extra/gaming.nix
     ./../../modules/system/extra/vm.nix
+    ./../../modules/system/extra/maccel.nix
     #./../../modules/system/extra/nvidia.nix  
     
     # ./../../modules/system/gnome.nix

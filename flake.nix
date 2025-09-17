@@ -12,6 +12,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    maccel.url = "github:Gnarus-G/maccel";
+
   };
 
   outputs = inputs@{ 
