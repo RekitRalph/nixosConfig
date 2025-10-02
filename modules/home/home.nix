@@ -1,6 +1,18 @@
 { config, pkgs, ... }:
 
+let
+    dotfiles = "${config.home.homeDirectory}/nixos/modules/home/dotfiles";
+    create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+    # Standard .config/directory
+    configs = {
+        hypr = "hypr";
+        helix = "helix";
+        waybar = "waybar";
+        yazi = "yazi";
+    };
+in
 {
+  
   home.username = "evan";
   home.homeDirectory = "/home/evan";
 
@@ -24,21 +36,25 @@
     size = 24;
   };
   
+  xdg.configFile = builtins.mapAttrs (name: subpath: {
+    source = create_symlink "${dotfiles}/${subpath}";
+    recursive = true;
+  }) configs;
   # point to the hyprland config file in "/nixos/config/helix"  
-  xdg.configFile."hypr".source = 
-  config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/hypr";
+  # xdg.configFile."hypr".source = 
+  # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/hypr";
 
 
-  xdg.configFile."helix".source = 
-  config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/helix";
+  # xdg.configFile."helix".source = 
+  # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/helix";
 
-  # waybar config file
-  xdg.configFile."waybar".source =
-  config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/waybar";
+  # # waybar config file
+  # xdg.configFile."waybar".source =
+  # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/waybar";
 
-  # yazi config file
-  xdg.configFile."yazi".source =
-  config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/yazi";
+  # # yazi config file
+  # xdg.configFile."yazi".source =
+  # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/yazi";
 
   
   xdg.mimeApps = {
