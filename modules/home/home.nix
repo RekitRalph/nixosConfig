@@ -9,6 +9,7 @@ let
         helix = "helix";
         waybar = "waybar";
         yazi = "yazi";
+        niri = "niri";
     };
 in
 {
@@ -35,6 +36,10 @@ in
     name = "Bibata-Original-Ice";
     size = 24;
   };
+
+  programs.hyprpanel = {
+    enable = true;
+  };
   
   xdg.configFile = builtins.mapAttrs (name: subpath: {
     source = create_symlink "${dotfiles}/${subpath}";
@@ -45,18 +50,6 @@ in
   # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/hypr";
 
 
-  # xdg.configFile."helix".source = 
-  # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/helix";
-
-  # # waybar config file
-  # xdg.configFile."waybar".source =
-  # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/waybar";
-
-  # # yazi config file
-  # xdg.configFile."yazi".source =
-  # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/yazi";
-
-  
   xdg.mimeApps = {
     associations.added = {
       "x-scheme-handler/terminal" = "kitty.desktop";

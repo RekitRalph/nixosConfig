@@ -3,12 +3,14 @@
     #to enable Hyprland
     programs.hyprland = {
     enable = true;
-    xwayland.enable = true;
+    # withUWSM = true;
     # nvidiaPatches = true;
     };
 
+    # services.displayManager.ly.enable = true;
+
     services.hypridle.enable = true;
-    
+    programs.hyprlock.enable = true;
 
 
     environment.sessionVariables = {
@@ -31,8 +33,10 @@
 
 
     environment.systemPackages = with pkgs; [
-    waybar #top bar
-    swww # for wallpapers
+    # waybar #top bar
+    # swww # for wallpapers
+    hyprpaper # for wallpapers
+    hyprpanel # top bar
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     hyprpolkitagent # It is required for GUI applications to be able to request elevated privileges.
@@ -41,7 +45,7 @@
     nwg-look
     wofi #menu
     # rofi # menu
-    dunst #notification daemon
+    # dunst #notification daemon
     libnotify
     meson
     wayland-protocols

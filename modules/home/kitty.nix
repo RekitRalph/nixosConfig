@@ -15,7 +15,7 @@ programs.kitty = {
       clear_all_shortcuts = true;
       input_delay = 0;
       kitty_mod = "ctrl+shift";
-      background_opacity = .9;
+      # background_opacity = .9;
     };
 
     keybindings = {
