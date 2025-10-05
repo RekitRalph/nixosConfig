@@ -69,6 +69,10 @@
     lact # amd configure
     micro # nano replacement text editor
 
+    # Helix languages
+    nil
+    
+
    
     selectdefaultapplication # set default apps for files
     filezilla
