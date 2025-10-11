@@ -16,46 +16,45 @@
 
   };
 
-  outputs = inputs@{ 
-    self, 
-    nixpkgs, 
-    nixpkgs-stable,
-    home-manager,
-    ...
-  }: {
-    
-    nixosConfigurations = {
-      
-      starchy = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
+  outputs =
+    inputs@{ self
+    , nixpkgs
+    , nixpkgs-stable
+    , home-manager
+    , ...
+    }: {
 
-        specialArgs = {
-          inherit inputs;
-          pkgs-stable = import nixpkgs-stable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        };
-        
-        modules = [
-          ./hosts/starchy/configuration.nix
-          # inputs.stylix.nixosModules.stylix
-                  
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.evan = import ./modules/home/home.nix;
+      nixosConfigurations = {
 
-            home-manager.extraSpecialArgs = {
-              
+        starchy = nixpkgs.lib.nixosSystem rec {
+          system = "x86_64-linux";
+
+          specialArgs = {
+            inherit inputs;
+            pkgs-stable = import nixpkgs-stable {
+              inherit system;
+              config.allowUnfree = true;
             };
+          };
 
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
-        ];
-      };
+          modules = [
+            ./hosts/starchy/configuration.nix
+            # inputs.stylix.nixosModules.stylix
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.evan = import ./modules/home/home.nix;
+              home-manager.backupFileExtension = "backup";
+
+              home-manager.extraSpecialArgs = { };
+
+              # Optionally, use home-manager.extraSpecialArgs to pass
+              # arguments to home.nix
+            }
+          ];
+        };
 
         lappy = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
@@ -66,26 +65,25 @@
               config.allowUnfree = true;
             };
           };
-        
+
           modules = [
             ./hosts/lappy/configuration.nix
             # inputs.stylix.nixosModules.stylix
-          
+
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.evan = import ./modules/home/home.nix;
+              home-manager.backupFileExtension = "backup";
 
-              home-manager.extraSpecialArgs = {
-              
-              };
+              home-manager.extraSpecialArgs = { };
 
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
             }
           ];
         };
+      };
     };
-  };
 }

@@ -24,7 +24,7 @@ in
     ./kitty.nix
     # ./themes.nix
     # ./dconf.nix
-     # ./helix
+    # ./helix
     # ./gtk.nix
   ];
 

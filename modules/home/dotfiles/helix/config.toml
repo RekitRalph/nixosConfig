@@ -16,3 +16,4 @@ select = "underline"
 
 [keys.normal]
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+

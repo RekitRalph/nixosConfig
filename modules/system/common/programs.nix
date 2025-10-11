@@ -71,8 +71,11 @@
 
     # Helix languages
     nil
+    taplo
+    vscode-langservers-extracted
+    nixpkgs-fmt
+    kdlfmt
     
-
    
     selectdefaultapplication # set default apps for files
     filezilla
