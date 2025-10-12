@@ -6,28 +6,29 @@
 
 {
 
- nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./../../modules/system/common
     ./../../modules/system/extra/gaming.nix
     ./../../modules/system/extra/vm.nix
     ./../../modules/system/extra/maccel.nix
     #./../../modules/system/extra/nvidia.nix  
-    
+
     # ./../../modules/system/gnome.nix
-    # ./../../modules/system/kde.nix
+    ./../../modules/system/kde.nix
     # ./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
     # ./../../modules/system/hyprland.nix
-    ./../../modules/system/niri.nix
+    # ./../../modules/system/niri.nix
     # ./../../modules/xfce.nix
   ];
 
   networking.hostName = "starchy"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  
+
 
   # Perform garbage collection weekly to maintain low disk usage
   nix.gc = {
@@ -41,13 +42,13 @@
     enable32Bit = true;
     extraPackages = with pkgs; [
       vulkan-loader
-      mesa 
+      mesa
       vulkan-validation-layers
     ];
   };
 
 
-/*     programs.nh = {
+  /*     programs.nh = {
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
@@ -96,7 +97,7 @@
   users.users.evan = {
     isNormalUser = true;
     description = "evan";
-    extraGroups = [ "networkmanager" "wheel" "audio" "uucp" "dialout"]; # uucp and dialout for maxx stick
+    extraGroups = [ "networkmanager" "wheel" "audio" "uucp" "dialout" ]; # uucp and dialout for maxx stick
     packages = with pkgs;
       [
         #  thunderbird
@@ -116,7 +117,7 @@
   services.lact.enable = true; # fan control service
   hardware.amdgpu.overdrive.enable = true;
 
-  
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -129,14 +130,14 @@
     script = ''
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
       flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo 
-   '';
+    '';
   };
-  
-   fileSystems."/media/misc" = {
-   device = "/dev/disk/by-uuid/c4ed7cf6-09dd-4778-b65d-3aa1099ec134";
-   fsType = "ext4";
-   options = [ "nofail"];
- };
+
+  fileSystems."/media/misc" = {
+    device = "/dev/disk/by-uuid/c4ed7cf6-09dd-4778-b65d-3aa1099ec134";
+    fsType = "ext4";
+    options = [ "nofail" ];
+  };
 
   zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
 
