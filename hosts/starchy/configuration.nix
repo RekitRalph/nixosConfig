@@ -18,11 +18,11 @@
     #./../../modules/system/extra/nvidia.nix  
 
     # ./../../modules/system/gnome.nix
-    # ./../../modules/system/kde.nix
+    ./../../modules/system/kde.nix
     # ./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
     # ./../../modules/system/hyprland.nix
-    ./../../modules/system/niri.nix
+    # ./../../modules/system/niri.nix
     # ./../../modules/xfce.nix
   ];
 
