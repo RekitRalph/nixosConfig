@@ -89,7 +89,7 @@
     "tooltip-format": "Power Off"
   },
   "clock": {
-    "format": "󰥔 {:%H:%M 󰃮 %B %d, %Y}",
+    "format": "󰥔 {:%I:%M %p 󰃮 %B %d, %Y}",
     "format-alt": "󰥔 {:%H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -118,12 +118,12 @@
     "format": "󰘚 {usage}%",
     "tooltip": true,
     "interval": 1,
-    "on-click": "alacritty -e htop"
+    "on-click": "kitty -e htop"
   },
   "memory": {
     "format": "󰍛 {}%",
     "interval": 1,
-    "on-click": "alacritty -e htop"
+    "on-click": "kitty -e htop"
   },
   "temperature": {
     "critical-threshold": 80,
@@ -165,7 +165,7 @@
     "format-disconnected": "󰖪 Disconnected",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "tooltip-format": "{ifname}: {ipaddr}",
-    "on-click-right": "alacritty -e nmtui"
+    "on-click-right": "kitty -e nmtui"
   },
   "wireplumber#sink": {
     "format": "{icon} {volume}%",

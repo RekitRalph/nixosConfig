@@ -1,4 +1,4 @@
-{config, pkgs, pkgs-stable,  ...}:
+{ config, pkgs, pkgs-stable, ... }:
 {
 
   # List packages installed in system profile. To search, run:
@@ -6,7 +6,7 @@
   environment.systemPackages = (with pkgs; [
 
     bitwarden-desktop
-    youtube-music    
+    youtube-music
     calibre # ebooks
     vesktop # discord replacement
     discord
@@ -24,6 +24,7 @@
     nautilus # Gnome File manager
     rhythmbox # Music player
     conky
+    zed-editor-fhs
 
     # terminal #
     eza # ls replacement
@@ -75,8 +76,8 @@
     vscode-langservers-extracted
     nixpkgs-fmt
     kdlfmt
-    
-   
+
+
     selectdefaultapplication # set default apps for files
     filezilla
     wlvncc # wayland vnc client
@@ -92,7 +93,8 @@
 
   ]) ++ (with pkgs-stable; [
     # calibre # use stable version of calibre
-    libreoffice-fresh 
+    libreoffice-fresh
+    xfce.thunar
     # wpsoffice
   ]);
 

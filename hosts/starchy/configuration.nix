@@ -2,11 +2,19 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-stable, ... }:
+{
+  config,
+  pkgs,
+  pkgs-stable,
+  ...
+}:
 
 {
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   imports = [
     # Include the results of the hardware scan.
@@ -15,20 +23,19 @@
     ./../../modules/system/extra/gaming.nix
     ./../../modules/system/extra/vm.nix
     ./../../modules/system/extra/maccel.nix
-    #./../../modules/system/extra/nvidia.nix  
+    #./../../modules/system/extra/nvidia.nix
 
     # ./../../modules/system/gnome.nix
-    ./../../modules/system/kde.nix
+    # ./../../modules/system/kde.nix
     # ./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
     # ./../../modules/system/hyprland.nix
-    # ./../../modules/system/niri.nix
+    ./../../modules/system/niri.nix
     # ./../../modules/xfce.nix
   ];
 
   networking.hostName = "starchy"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
 
   # Perform garbage collection weekly to maintain low disk usage
   nix.gc = {
@@ -47,13 +54,14 @@
     ];
   };
 
-
-  /*     programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 4d --keep 3";
-    flake = "/home/user/my-nixos-config";
-  }; */
+  /*
+    programs.nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 4d --keep 3";
+      flake = "/home/user/my-nixos-config";
+    };
+  */
 
   # Optimize storage
   # You can also manually optimize the store via:
@@ -92,16 +100,20 @@
     variant = "";
   };
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.evan = {
     isNormalUser = true;
     description = "evan";
-    extraGroups = [ "networkmanager" "wheel" "audio" "uucp" "dialout" ]; # uucp and dialout for maxx stick
-    packages = with pkgs;
-      [
-        #  thunderbird
-      ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "uucp"
+      "dialout"
+    ]; # uucp and dialout for maxx stick
+    packages = with pkgs; [
+      #  thunderbird
+    ];
   };
 
   # Enable automatic login for the user.
@@ -117,7 +129,6 @@
   services.lact.enable = true; # fan control service
   hardware.amdgpu.overdrive.enable = true;
 
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -129,7 +140,7 @@
     path = [ pkgs.flatpak ];
     script = ''
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-      flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo 
+      flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
     '';
   };
 
@@ -141,19 +152,17 @@
 
   zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
 
-
   # Udev rules for usb connect on browser on WLMOUSE software
   services.udev.extraRules = ''
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a878", MODE:="0777" 
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a878", MODE:="0777" 
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a879", MODE:="0777" 
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a878", MODE:="0777"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a878", MODE:="0777"
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a879", MODE:="0777"
     SUBSYSTEM=="usb", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a879", MODE:="0777"
     SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="104d", MODE:="0777"
     SUBSYSTEM=="usb", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="5055", MODE:="0777"
     SUBSYSTEM=="usb", ATTRS{idVendor}=="33e4", ATTRS{idProduct}=="3517", MODE:="0777"
     SUBSYSTEM=="usb", ATTRS{idVendor}=="33e4", ATTRS{idProduct}=="3508", MODE:="0777"
   '';
-
 
   # pulseaudio support for Mumble
   # environment.systemPackages = [(pkgs.mumble.override { pulseSupport = true; })];
