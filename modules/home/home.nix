@@ -1,24 +1,25 @@
 { config, pkgs, ... }:
 
 let
-    dotfiles = "${config.home.homeDirectory}/nixos/modules/home/dotfiles";
-    create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
-    # Standard .config/directory
-    configs = {
-        hypr = "hypr";
-        helix = "helix";
-        waybar = "waybar";
-        yazi = "yazi";
-        niri = "niri";
-    };
+  dotfiles = "${config.home.homeDirectory}/nixos/modules/home/dotfiles";
+  create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+  # Standard .config/directory
+  configs = {
+    hypr = "hypr";
+    helix = "helix";
+    waybar = "waybar";
+    yazi = "yazi";
+    niri = "niri";
+    fuzzel = "fuzzel";
+  };
 in
 {
-  
+
   home.username = "evan";
   home.homeDirectory = "/home/evan";
 
   # if home manage fails because of config file run "journalctl -e --unit home-manager-evan.service"
- 
+
   imports = [
     #./omp.nix
     ./kitty.nix
@@ -29,7 +30,7 @@ in
   ];
 
   # stylix.targets.helix.enable = false;  
-  
+
 
   gtk.cursorTheme = {
     package = pkgs.bibata-cursors;
@@ -40,11 +41,13 @@ in
   programs.hyprpanel = {
     enable = true;
   };
-  
-  xdg.configFile = builtins.mapAttrs (name: subpath: {
-    source = create_symlink "${dotfiles}/${subpath}";
-    recursive = true;
-  }) configs;
+
+  xdg.configFile = builtins.mapAttrs
+    (name: subpath: {
+      source = create_symlink "${dotfiles}/${subpath}";
+      recursive = true;
+    })
+    configs;
   # point to the hyprland config file in "/nixos/config/helix"  
   # xdg.configFile."hypr".source = 
   # config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos/modules/home/dotfiles/hypr";
@@ -60,13 +63,13 @@ in
   };
 
   xdg.mimeApps.defaultApplications = {
-    "text/html" = ["firefox.desktop"];
-    "text/xml" = ["firefox.desktop"];
-    "x-scheme-handler/http" = ["firefox.desktop"];
-    "x-scheme-handler/https" = ["firefox.desktop"];
+    "text/html" = [ "firefox.desktop" ];
+    "text/xml" = [ "firefox.desktop" ];
+    "x-scheme-handler/http" = [ "firefox.desktop" ];
+    "x-scheme-handler/https" = [ "firefox.desktop" ];
   };
 
-     # VS Codium
+  # VS Codium
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
@@ -100,25 +103,18 @@ in
     shellAliases = {
       pp = "echo hello";
       ll = "eza -lh --group-directories-first --color=always --icons=always ";
-      ls = "eza --group-directories-first --color=always --icons=always"; 
+      ls = "eza --group-directories-first --color=always --icons=always";
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
       fe = "hx \"$(fzf)\"";
     };
     initExtra = ''
-    # --- Yazi Setup ---
-    export EDITOR="hx"
+      unzipto() {
+          unzip "$1" -d "''${1%.zip}"
+      }
 
-    function y() {
-      local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-      yazi "$@" --cwd-file="$tmp"
-      if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-        builtin cd -- "$cwd"
-      fi
-      rm -f -- "$tmp"
-    }
     '';
   };
-    
+
 
   home.stateVersion = "24.05";
 

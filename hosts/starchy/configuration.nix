@@ -2,11 +2,10 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{
-  config,
-  pkgs,
-  pkgs-stable,
-  ...
+{ config
+, pkgs
+, pkgs-stable
+, ...
 }:
 
 {
@@ -149,6 +148,12 @@
     fsType = "ext4";
     options = [ "nofail" ];
   };
+
+  # fileSystems."/media/ssd" = {
+  #   device = "/dev/disk/by-uuid/bea115b3-6d3a-45ef-8117-e69b68f8ba8b";
+  #   fsType = "ext4";
+  #   options = [ "nofail" ];
+  # };
 
   zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
 

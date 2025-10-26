@@ -94,11 +94,13 @@
   ]) ++ (with pkgs-stable; [
     # calibre # use stable version of calibre
     libreoffice-fresh
+    streamrip
     xfce.thunar
     # wpsoffice
   ]);
 
-
+  # Chromium policies
+  programs.chromium.enable = true;
   # VS Codium direnv
   programs.direnv.enable = true;
   # Mullvad VPN
