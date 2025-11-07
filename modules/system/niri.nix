@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
 
   programs.niri.enable = true;
@@ -7,7 +7,7 @@
   services.gnome.gnome-keyring.enable = true; # secret service
   security.pam.services.swaylock = { };
 
-  programs.waybar.enable = true; # top bar
+  # programs.waybar.enable = true; # top bar
   environment.systemPackages = with pkgs; [
     fuzzel # menu
     swaylock
@@ -17,6 +17,8 @@
     xwayland-satellite
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
+    inputs.noctalia.packages.${system}.default
+    # inputs.quickshell.packages.${system}.default
   ];
 
   systemd.user.services.swayidle = {

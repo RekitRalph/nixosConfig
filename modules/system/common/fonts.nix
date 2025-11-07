@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 {
   fonts.fontDir.enable = true;
   fonts.packages = with pkgs; [
@@ -6,7 +6,7 @@
     google-fonts
     font-awesome
     # dejavu_fonts
-    vistafonts
+    vista-fonts
     nerd-font-patcher
     atkinson-hyperlegible-next
     atkinson-hyperlegible-mono
