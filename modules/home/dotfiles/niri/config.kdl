@@ -81,25 +81,33 @@ input {
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
     focus-follows-mouse max-scroll-amount="0%"
 }
+
+
+gestures{
+    
+    hot-corners{
+        off
+    }
+}
 // ##################################################
 // #                   Monitors Config              #
 // ##################################################
 // by running `niri msg outputs` while inside a niri instance.
 
-  output "DP-2" {
-    mode "2560x1440@500.000"
-    scale 1
-    transform "normal"
-    position x=0 y=0
-    backdrop-color "#000000"
-    background-color "#000000"
-    variable-refresh-rate on-demand=true
-}
+//   output "DP-2" {
+//     mode "2560x1440@500.000"
+//     scale 1
+//     transform "normal"
+//     position x=0 y=0
+//     backdrop-color "#000000"
+//     background-color "#000000"
+//     variable-refresh-rate on-demand=true
+// }
   output "DP-3" {
     mode "2560x1440@143.964"
     scale 1
     transform "normal"
-    position x=-2560 y=0
+    position x=0 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -149,42 +157,11 @@ layout {
     // Alternatively, you can override it with a window rule called
     // `draw-border-with-background`.
 
-    // You can change how the focus ring looks.
     focus-ring {
-        // Uncomment this line to disable the focus ring.
-        // off
-
-        // How many logical pixels the ring extends out from the windows.
         width 2
 
-        // Colors can be set in a variety of ways:
-        // - CSS named colors: "red"
-        // - RGB hex: "#rgb", "#rgba", "#rrggbb", "#rrggbbaa"
-        // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
-
-        // Color of the ring on the active monitor.
         active-color "#7fc8ff"
-
-        // Color of the ring on inactive monitors.
-        //
-        // The focus ring only draws around the active window, so the only place
-        // where you can see its inactive-color is on other monitors.
         inactive-color "#505050"
-
-        // You can also use gradients. They take precedence over solid colors.
-        // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
-        // The angle is the same as in linear-gradient, and is optional,
-        // defaulting to 180 (top-to-bottom gradient).
-        // You can use any CSS linear-gradient tool on the web to set these up.
-        // Changing the color space is also supported, check the wiki for more info.
-        //
-        // active-gradient from="#80c8ff" to="#c7ff7f" angle=45
-
-        // You can also color the gradient relative to the entire view
-        // of the workspace, rather than relative to just the window itself.
-        // To do that, set relative-to="workspace-view".
-        //
-        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
     // You can also add a border. It's similar to the focus ring, but always visible.
@@ -350,7 +327,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+RETURN hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    // Mod+SPACE hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+SPACE hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Super+B   { spawn "firefox"; }
     Super+X   { spawn "thunar"; }
@@ -359,8 +336,8 @@ binds {
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
-    Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
-    Super+Space { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    Super+Alt+S allow-when-locked=true { spawn-sh "pkill quickshell || exec noctalia-shell"; }
+    // Super+Space { spawn-sh "noctalia-shell ipc call launcher toggle"; }
     Super+Escape { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.

@@ -25,11 +25,11 @@
     #./../../modules/system/extra/nvidia.nix
 
     # ./../../modules/system/gnome.nix
-    # ./../../modules/system/kde.nix
+    ./../../modules/system/kde.nix
     # ./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
     # ./../../modules/system/hyprland.nix
-    ./../../modules/system/niri.nix
+    # ./../../modules/system/niri.nix
     # ./../../modules/xfce.nix
   ];
 
@@ -149,6 +149,12 @@
     options = [ "nofail" ];
   };
 
+  fileSystems."/media/virt" = {
+    device = "/dev/disk/by-uuid/f16ce643-90c2-4af1-a1ee-e9229bbf4f69";
+    fsType = "ext4";
+    options = [ "nofail" ];
+  };
+
   # fileSystems."/media/ssd" = {
   #   device = "/dev/disk/by-uuid/bea115b3-6d3a-45ef-8117-e69b68f8ba8b";
   #   fsType = "ext4";
@@ -167,6 +173,8 @@
     SUBSYSTEM=="usb", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="5055", MODE:="0777"
     SUBSYSTEM=="usb", ATTRS{idVendor}=="33e4", ATTRS{idProduct}=="3517", MODE:="0777"
     SUBSYSTEM=="usb", ATTRS{idVendor}=="33e4", ATTRS{idProduct}=="3508", MODE:="0777"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="0853", ATTRS{idProduct}=="0317", MODE:="0660", GROUP="input", TAG+="uaccess"
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="0853", ATTRS{idProduct}=="0317", MODE:="0660", GROUP="input", TAG+="uaccess"
   '';
 
   # pulseaudio support for Mumble

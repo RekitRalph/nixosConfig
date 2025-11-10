@@ -12,14 +12,17 @@
     fuzzel # menu
     swaylock
     mako # notification
-    wlogout
+    # wlogout
     swayidle
     xwayland-satellite
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
     inputs.noctalia.packages.${system}.default
     # inputs.quickshell.packages.${system}.default
+    playerctl
+    matugen
   ];
+
 
   systemd.user.services.swayidle = {
     description = "Idle manager for Niri";
@@ -36,4 +39,5 @@
       Restart = "on-failure";
     };
   };
+
 }

@@ -1,16 +1,16 @@
-{config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
 
-programs.kitty = {
+  programs.kitty = {
     enable = true;
     package = pkgs.kitty;
-    themeFile = "Tomorrow_Night_Blue";
+    themeFile = "Cobalt2";
     font = {
       name = "Atkinson Hyperlegible Mono";
     };
     settings = {
-      confirm_os_window_close = 0; 
+      confirm_os_window_close = 0;
       copy_on_select = "clipboard";
       clear_all_shortcuts = true;
       input_delay = 0;
