@@ -177,6 +177,9 @@
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="0853", ATTRS{idProduct}=="0317", MODE:="0660", GROUP="input", TAG+="uaccess"
   '';
 
+  boot.extraModprobeConfig = /* modconf */ ''  
+  options usbcore quirks=0853:0317:gki
+    '';
   # pulseaudio support for Mumble
   # environment.systemPackages = [(pkgs.mumble.override { pulseSupport = true; })];
 
