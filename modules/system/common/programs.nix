@@ -16,13 +16,13 @@
     vlc
     ungoogled-chromium # browser
     qbittorrent
-    protonvpn-gui
+    # protonvpn-gui
     #ivpn-ui
     picocrypt # encryption file tool, alternative to veracrypt
     # kmymoney # Personal finance program
     realvnc-vnc-viewer
-    nautilus # Gnome File manager
-    rhythmbox # Music player
+    kdePackages.dolphin
+    # nautilus # Gnome File manager
     conky
     zed-editor-fhs
 
@@ -96,6 +96,7 @@
     libreoffice-fresh
     streamrip
     xfce.thunar
+    rhythmbox # Music player
     # wpsoffice
   ]);
 
