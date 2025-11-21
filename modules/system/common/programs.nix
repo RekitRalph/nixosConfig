@@ -14,15 +14,13 @@
     mumble
     veracrypt # encrypted file archive
     vlc
-    ungoogled-chromium # browser
+    # ungoogled-chromium # browser
+    google-chrome
     qbittorrent
     # protonvpn-gui
-    #ivpn-ui
     picocrypt # encryption file tool, alternative to veracrypt
-    # kmymoney # Personal finance program
     realvnc-vnc-viewer
     kdePackages.dolphin
-    # nautilus # Gnome File manager
     conky
     zed-editor-fhs
 
@@ -84,8 +82,6 @@
     linuxKernel.packages.linux_xanmod_latest.nct6687d
     # Theme #
     bibata-cursors # cursor theme (Bibata-Original-Ice)
-    dracula-theme # color theme
-    dracula-icon-theme # Icon theme
     hackneyed # windows 3.x cursor theme
     posy-cursors # posy cursors from youtube
     tokyonight-gtk-theme #Tokyo Night color theme
