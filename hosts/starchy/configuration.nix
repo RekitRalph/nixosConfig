@@ -21,7 +21,7 @@
     ./../../modules/system/common
     ./../../modules/system/extra/gaming.nix
     ./../../modules/system/extra/vm.nix
-    ./../../modules/system/extra/maccel.nix
+    # ./../../modules/system/extra/maccel.nix
     #./../../modules/system/extra/nvidia.nix
 
     # ./../../modules/system/gnome.nix
@@ -38,7 +38,7 @@
 
   # Perform garbage collection weekly to maintain low disk usage
   nix.gc = {
-    #automatic = true;
+    automatic = true;
     dates = "weekly";
     options = "--delete-older-than 7d";
   };

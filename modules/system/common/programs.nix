@@ -17,11 +17,10 @@
     # ungoogled-chromium # browser
     google-chrome
     qbittorrent
-    # protonvpn-gui
+    protonvpn-gui
     picocrypt # encryption file tool, alternative to veracrypt
     realvnc-vnc-viewer
     kdePackages.dolphin
-    conky
     zed-editor-fhs
 
     # terminal #
@@ -93,6 +92,7 @@
     streamrip
     xfce.thunar
     rhythmbox # Music player
+    galculator # RPN Calculator
     # wpsoffice
   ]);
 
