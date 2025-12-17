@@ -29,7 +29,7 @@
     # ./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
     # ./../../modules/system/hyprland.nix
-    # ./../../modules/system/niri.nix
+    # ./../../modules/system/niri.nix # enable in flake
     # ./../../modules/xfce.nix
   ];
 

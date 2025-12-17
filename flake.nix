@@ -14,15 +14,18 @@
 
     maccel.url = "github:Gnarus-G/maccel";
 
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
+    nix-cachyos-kernel.inputs.nixpkgs.follows = "nixpkgs";
+
     quickshell = {
       url = "github:outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell"; # Use same quickshell version
-    };
+    # noctalia = {
+    #   url = "github:noctalia-dev/noctalia-shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.quickshell.follows = "quickshell"; # Use same quickshell version
+    # };
 
   };
 
@@ -31,6 +34,7 @@
     , nixpkgs
     , nixpkgs-stable
     , home-manager
+    , nix-cachyos-kernel
     , ...
     }: {
 
