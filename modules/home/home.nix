@@ -112,6 +112,12 @@ in
           unzip "$1" -d "''${1%.zip}"
       }
 
+      download() {
+          for file in "$@"/*.acsm; do
+              echo "Processing: $file"
+              acsmdownloader "$file"
+          done
+      }
     '';
   };
 

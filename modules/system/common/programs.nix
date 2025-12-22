@@ -22,6 +22,7 @@
     realvnc-vnc-viewer
     kdePackages.dolphin
     zed-editor-fhs
+    claude-code
 
     # terminal #
     eza # ls replacement
