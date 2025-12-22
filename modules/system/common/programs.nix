@@ -67,6 +67,7 @@
     lm_sensors # sensor for fan control
     lact # amd configure
     micro # nano replacement text editor
+    caligula # dd alternative burn images
 
     # Helix languages
     nil
