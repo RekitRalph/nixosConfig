@@ -50,3 +50,5 @@ Whenever I receive an ACSM file, I can just pass it to the acsmdownloader utilit
 $ acsmdownloader -f foobar.acsm
 
 This spits out the EPUB, which may be imported into my standard Calibre library.
+
+To remove the Drm use "adept_remove -f <encryptedfile>"

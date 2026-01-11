@@ -6,7 +6,7 @@
   environment.systemPackages = (with pkgs; [
 
     bitwarden-desktop
-    youtube-music
+    pear-desktop # Youtube-music client
     calibre # ebooks
     vesktop # discord replacement
     discord
