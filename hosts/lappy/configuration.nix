@@ -6,22 +6,50 @@
 
 {
 
- nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./../../modules/system/common
-   # ./../../modules/system/extra/gaming.nix
+    # ./../../modules/system/extra/gaming.nix
     ./../../modules/system/gnome.nix
-   # ./../../modules/system/extra/vm.nix
+    # ./../../modules/system/extra/vm.nix
     # ./../../modules/home/themes.nix
     # ./../../modules/hyprland.nix
     # ./../../modules/xfce.nix
   ];
 
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    timeout = 2;
+
+    # Limit the number of generations to keep
+    systemd-boot.configurationLimit = 10;
+  };
+
+  # Change the Kernel to xanmod
+  # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  # boot.kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.${config.nixpkgs.system}.linuxPackages-cachyos-latest-lto;
+  boot.kernelPackages = pkgs.linuxPackages_latest; # regular kernel
+  boot.kernelParams = [
+    "usbcore.quirks=0853:0317:gki" # fix for keyboard not working after boot
+
+    # # Temporary fix for amdgpu flip_done timeout errors
+    # "amdgpu.dpm=0"      # Disable dynamic power management
+    # "amdgpu.aspm=0"     # Disable active state power management
+    # "amdgpu.bapm=0"     # Disable bidirectional application power management
+    # "amdgpu.runpm=0"    # Disable runtime power management
+    # "pcie_aspm=off"     # Disable PCIe active state power management
+  ];
+
+  # boot.extraModulePackages = with config.boot.kernelPackages; [ nct6687d ];
+  boot.kernelModules = [ "nct6687d" ];
+
   networking.hostName = "lappy"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  
+
   services.tailscale.enable = true;
 
   # Optional (default: 41641):
@@ -37,7 +65,7 @@
     options = "--delete-older-than 1w";
   };
 
-    programs.nh = {
+  programs.nh = {
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 3";
@@ -116,7 +144,7 @@
   };
 
 
-  
+
   # Udev rules for usb connect on browser
   services.udev.extraRules = ''
     SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a878", MODE:="0660", GROUP="input"
