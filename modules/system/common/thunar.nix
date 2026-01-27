@@ -7,8 +7,10 @@
   };
 
   # plugins for thunar
-  pkgs.thunar-volman = true;
-  pkgs.thunar-archive-plugin = true;
+  enviroment.systemPackages = with pkgs; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
 
   services.gvfs.enable = true; # mount usb with thunar
 }
