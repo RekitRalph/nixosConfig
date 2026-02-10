@@ -15,9 +15,15 @@ in
     virtio-win
     win-spice
     adwaita-icon-theme
+    distrobox
   ];
 
   virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+    };
+
     libvirtd = {
       enable = true;
       qemu.swtpm.enable = true;

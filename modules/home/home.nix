@@ -106,6 +106,8 @@ in
       ls = "eza --group-directories-first --color=always --icons=always";
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
       fe = "hx \"$(fzf)\"";
+      ns = "pw-loopback -C 62";
+
     };
     initExtra = ''
       unzipto() {

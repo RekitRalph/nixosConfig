@@ -7,7 +7,7 @@
   };
 
   # plugins for thunar
-  enviroment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     thunar-archive-plugin
     thunar-volman
   ];

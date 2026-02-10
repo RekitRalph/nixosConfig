@@ -17,10 +17,18 @@
     virtio-win
     win-spice
     adwaita-icon-theme
+    distrobox
+    distrobox-tui
+    distroshelf
   ];
 
   # Manage the virtualisation services
   virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+    };
+
     libvirtd = {
       enable = true;
       qemu = {

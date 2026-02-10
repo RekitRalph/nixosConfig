@@ -94,20 +94,20 @@ gestures{
 // ##################################################
 // by running `niri msg outputs` while inside a niri instance.
 
-//   output "DP-2" {
-//     mode "2560x1440@500.000"
-//     scale 1
-//     transform "normal"
-//     position x=0 y=0
-//     backdrop-color "#000000"
-//     background-color "#000000"
-//     variable-refresh-rate on-demand=true
-// }
+  output "DP-2" {
+    mode "2560x1440@500.000"
+    scale 1
+    transform "normal"
+    position x=0 y=0
+    backdrop-color "#000000"
+    background-color "#000000"
+    variable-refresh-rate on-demand=true
+}
   output "DP-3" {
     mode "2560x1440@143.964"
     scale 1
     transform "normal"
-    position x=0 y=0
+    position x=-2560 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -158,6 +158,7 @@ layout {
     // `draw-border-with-background`.
 
     focus-ring {
+        off
         width 2
 
         active-color "#7fc8ff"

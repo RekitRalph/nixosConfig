@@ -25,11 +25,11 @@
     #./../../modules/system/extra/nvidia.nix
 
     # ./../../modules/system/gnome.nix
-    ./../../modules/system/kde.nix
+    # ./../../modules/system/kde.nix
     # ./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
     # ./../../modules/system/hyprland.nix
-    # ./../../modules/system/niri.nix # enable in flake
+    ./../../modules/system/niri.nix # enable in flake
     # ./../../modules/xfce.nix
   ];
 
@@ -68,6 +68,11 @@
   # Refer to the following link for more details:
   # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
   nix.settings.auto-optimise-store = true;
+
+  nix.settings = {
+    # Increase buffer to 256MB or 512MB
+    download-buffer-size = 256 * 1024 * 1024;
+  };
 
   # Enable networking
   networking.networkmanager.enable = true;
