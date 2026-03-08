@@ -17,10 +17,11 @@
     xwayland-satellite
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
-    inputs.noctalia.packages.${system}.default
+    # inputs.noctalia.packages.${system}.default
     # inputs.quickshell.packages.${system}.default
     playerctl
     matugen
+    noctalia-shell
   ];
 
 

@@ -1,17 +1,18 @@
 { config, pkgs, ... }: {
 
-   programs.helix = {
-      enable = true;
-      defaultEditor = true;
-      extraPackages = [ 
-        pkgs.marksman 
-        pkgs.nil
-        pkgs.vscode-langservers-extracted
-        
-      ];
-   };
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+    extraPackages = [
+      pkgs.marksman
+      pkgs.nil
+      pkgs.vscode-langservers-extracted
+      pkgs.beancount-language-server
 
-   # point to the helix config file in "/nixos/config/helix" 
+    ];
+  };
+
+  # point to the helix config file in "/nixos/config/helix" 
   #xdg.configFile."helix/config.toml".source = 
   #config.lib.file.mkOutOfStoreSymlink 
   #"${config.home.homeDirectory}/nixos/modules/home/helix/config.toml";
@@ -19,7 +20,7 @@
   #xdg.configFile."helix/languages.toml".source = 
   #config.lib.file.mkOutOfStoreSymlink 
   #"${config.home.homeDirectory}/nixos/modules/home/helix/languages.toml";
-      /*
+  /*
       settings = {
          theme = "onedarker";
         editor = {
@@ -37,7 +38,7 @@
         formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
       }]; 
     };*/
-   
+
 
 
 }

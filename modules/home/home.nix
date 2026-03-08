@@ -75,7 +75,10 @@ in
     package = pkgs.vscodium;
   };
 
-  programs.yazi.enable = true;
+  programs.yazi = {
+    enable = true;
+    shellWrapperName = "y";
+  };
 
   home.packages = [
     # compares generations to see changes in rebuild.
@@ -106,7 +109,7 @@ in
       ls = "eza --group-directories-first --color=always --icons=always";
       rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
       fe = "hx \"$(fzf)\"";
-      ns = "pw-loopback -C 62";
+      ns = "pw-loopback -C 61 --capture-props='node.latency=128/48000' --playback-props='node.latency=128/48000'";
 
     };
     initExtra = ''
