@@ -24,6 +24,8 @@
     zed-editor-fhs
     claude-code
     hledger
+    hledger-web
+    hledger-ui
     beancount
     fava
 
@@ -78,6 +80,7 @@
     vscode-langservers-extracted
     nixpkgs-fmt
     kdlfmt
+    beancount-language-server
 
 
     selectdefaultapplication # set default apps for files

@@ -25,11 +25,11 @@
     #./../../modules/system/extra/nvidia.nix
 
     # ./../../modules/system/gnome.nix
-    # ./../../modules/system/kde.nix
+    ./../../modules/system/kde.nix
     # ./../../modules/system/cosmic.nix
     # ./../../modules/home/themes.nix
     # ./../../modules/system/hyprland.nix
-    ./../../modules/system/niri.nix # enable in flake
+    # ./../../modules/system/niri.nix # enable in flake
     # ./../../modules/xfce.nix
   ];
 
