@@ -26,6 +26,7 @@
     "udev.log_level=3" # Kernel log verbosity (0=silent, 7=debug)
     "vt.global_cursor_default=0" # Hide blinking cursor
 
+    # "amdgpu.dcdebugmask=0x10" # maybe stop monitor freeze
 
     # # Temporary fix for amdgpu flip_done timeout errors
     # "amdgpu.dpm=0"      # Disable dynamic power management
