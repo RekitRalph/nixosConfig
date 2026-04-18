@@ -17,7 +17,7 @@
     # ungoogled-chromium # browser
     google-chrome
     qbittorrent
-    protonvpn-gui
+    proton-vpn
     picocrypt # encryption file tool, alternative to veracrypt
     realvnc-vnc-viewer
     kdePackages.dolphin
