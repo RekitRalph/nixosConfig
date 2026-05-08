@@ -23,5 +23,11 @@
     ryubing
     mangohud
     goverlay
+    wine
+    wine64
+    winetricks
+    openrct2
   ];
+
+  hardware.graphics.enable32Bit = true;
 }

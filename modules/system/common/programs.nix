@@ -73,6 +73,7 @@
     lact # amd configure
     micro # nano replacement text editor
     caligula # dd alternative burn images
+    streamrip # downloader
 
     # Helix languages
     nil
