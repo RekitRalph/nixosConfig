@@ -12,7 +12,7 @@
 
   # Change the Kernel to xanmod
   # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-  boot.kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.${config.nixpkgs.system}.linuxPackages-cachyos-lts-lto;
+  boot.kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.${config.nixpkgs.system}.linuxPackages-cachyos-latest-lto-zen4;
   #boot.kernelPackages = pkgs.linuxPackages_latest; # regular kernel
 
   boot.consoleLogLevel = 3;

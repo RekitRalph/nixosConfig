@@ -70,7 +70,7 @@ in
   };
 
   # VS Codium
-  programs.vscode = {
+  programs.vscodium = {
     enable = true;
     package = pkgs.vscodium;
   };
