@@ -1,4 +1,4 @@
-{ pkgs, nix-cachyos-kernel, inputs, config, ... }:
+{ nix-cachyos-kernel, inputs, config, ... }:
 {
   # Bootloader.
   boot.loader = {
@@ -12,7 +12,7 @@
 
   # Change the Kernel to xanmod
   # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-  boot.kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.${config.nixpkgs.system}.linuxPackages-cachyos-latest-lto-zen4;
+  boot.kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.${config.nixpkgs.system}.linuxPackages-cachyos-latest-lto;
   #boot.kernelPackages = pkgs.linuxPackages_latest; # regular kernel
 
   boot.consoleLogLevel = 3;
@@ -22,7 +22,6 @@
 
     # --- Display / Console ---
     "quiet" # Suppress most boot messages
-    "splash" # Show splash screen
     "udev.log_level=3" # Kernel log verbosity (0=silent, 7=debug)
     "vt.global_cursor_default=0" # Hide blinking cursor
 
@@ -46,17 +45,6 @@
     trusted-public-keys = [
       "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-    ];
-  };
-
-  boot.plymouth = {
-    enable = true;
-    theme = "rings"; # or "bgrt", "breeze", "fade-in", "glow", "spinner"etc.
-    themePackages = with pkgs; [
-      # By default we would install all themes
-      (adi1090x-plymouth-themes.override {
-        selected_themes = [ "rings" ];
-      })
     ];
   };
 
