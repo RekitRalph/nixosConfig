@@ -23,11 +23,9 @@
     kdePackages.dolphin
     zed-editor-fhs
     claude-code
-    hledger
-    hledger-web
-    hledger-ui
-    beancount
-    fava
+    keepassxc
+    faugus-launcher
+
 
     # terminal #
     eza # ls replacement
