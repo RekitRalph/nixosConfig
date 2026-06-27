@@ -5,7 +5,7 @@
   # $ nix search wget
   environment.systemPackages = (with pkgs; [
 
-    bitwarden-desktop
+    # bitwarden-desktop
     pear-desktop # Youtube-music client
     calibre # ebooks
     vesktop # discord replacement
@@ -97,7 +97,7 @@
     # calibre # use stable version of calibre
     libreoffice-fresh
     streamrip
-    xfce.thunar
+    thunar
     rhythmbox # Music player
     galculator # RPN Calculator
     # wpsoffice
