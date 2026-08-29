@@ -1,4 +1,4 @@
-{ nix-cachyos-kernel, inputs, config, ... }:
+{ nix-cachyos-kernel, inputs, config, pkgs, ... }:
 {
   # Bootloader.
   boot.loader = {
@@ -11,8 +11,8 @@
   };
 
   # Change the Kernel to xanmod
-  # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-  boot.kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.${config.nixpkgs.system}.linuxPackages-cachyos-latest-lto;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  # boot.kernelPackages = inputs.nix-cachyos-kernel.legacyPackages.${config.nixpkgs.system}.linuxPackages-cachyos-latest-lto;
   #boot.kernelPackages = pkgs.linuxPackages_latest; # regular kernel
 
   boot.consoleLogLevel = 3;
@@ -39,8 +39,8 @@
   # Binary cache for nix-cachyos-kernel
   nix.settings = {
     substituters = [
-      "https://attic.xuyh0120.win/lantian"
-      "https://cache.garnix.io"
+      # "https://attic.xuyh0120.win/lantian"
+      # "https://cache.garnix.io"
     ];
     trusted-public-keys = [
       "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="

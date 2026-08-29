@@ -38,9 +38,9 @@ in
     size = 24;
   };
 
-  programs.hyprpanel = {
-    enable = true;
-  };
+  # # programs.hyprpanel = {
+  #   enable = true;
+  # };
 
   xdg.configFile = builtins.mapAttrs
     (name: subpath: {

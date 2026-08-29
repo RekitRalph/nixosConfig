@@ -17,7 +17,6 @@
     capSysNice = true;
   };
   programs.gamemode.enable = true;
-  services.sunshine.enable = true;
 
   environment.systemPackages = with pkgs; [
     # lutris
@@ -30,7 +29,6 @@
     wine64
     winetricks
     openrct2
-    sunshine # game streaming over local network
   ];
 
   hardware.graphics.enable32Bit = true;

@@ -19,7 +19,7 @@
     qbittorrent
     proton-vpn
     picocrypt # encryption file tool, alternative to veracrypt
-    realvnc-vnc-viewer
+    # realvnc-vnc-viewer
     kdePackages.dolphin
     zed-editor-fhs
     claude-code
@@ -90,7 +90,6 @@
     bibata-cursors # cursor theme (Bibata-Original-Ice)
     hackneyed # windows 3.x cursor theme
     posy-cursors # posy cursors from youtube
-    tokyonight-gtk-theme #Tokyo Night color theme
     colloid-gtk-theme # Colloid color theme
 
   ]) ++ (with pkgs-stable; [
