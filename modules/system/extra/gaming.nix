@@ -14,7 +14,7 @@
 
   programs.gamescope = {
     enable = true;
-    capSysNice = true;
+    capSysNice = false;
   };
   programs.gamemode.enable = true;
 

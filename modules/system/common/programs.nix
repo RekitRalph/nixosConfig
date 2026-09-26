@@ -25,6 +25,7 @@
     claude-code
     keepassxc
     faugus-launcher
+    easyeffects
 
 
     # terminal #
