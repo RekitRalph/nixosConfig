@@ -21,7 +21,8 @@
     picocrypt # encryption file tool, alternative to veracrypt
     # realvnc-vnc-viewer
     kdePackages.dolphin
-    zed-editor-fhs
+    # zed-editor-fhs
+    gram
     claude-code
     keepassxc
     faugus-launcher

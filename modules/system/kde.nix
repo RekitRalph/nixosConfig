@@ -8,6 +8,8 @@
 
   services.displayManager.sddm.settings.General.DisplayServer = "wayland";
 
+  programs.kde-pim.enable = false; # disable kmail, kontact, merkuro apps.
+
   environment.systemPackages = [ pkgs.kdePackages.kzones ];
 
 

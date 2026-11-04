@@ -29,6 +29,8 @@
     wine64
     winetricks
     openrct2
+    protonup-qt
+    wowup-cf # wow addon client
   ];
 
   hardware.graphics.enable32Bit = true;
