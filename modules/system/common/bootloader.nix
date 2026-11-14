@@ -16,7 +16,6 @@
   #boot.kernelPackages = pkgs.linuxPackages_latest; # regular kernel
 
   boot.consoleLogLevel = 3;
-  boot.initrd.verbose = false;
   boot.kernelParams = [
     "usbcore.quirks=0853:0317:gki" # fix for keyboard not working after boot
 

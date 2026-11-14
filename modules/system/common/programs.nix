@@ -22,7 +22,6 @@
     # realvnc-vnc-viewer
     kdePackages.dolphin
     # zed-editor-fhs
-    gram
     claude-code
     keepassxc
     faugus-launcher
