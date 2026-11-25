@@ -17,6 +17,23 @@
       };
     };
 
+    # Fosi K7 (XMOS 20b1:000b) fails to re-open after node suspend
+    # (usb_set_interface -32 / clock source invalid), so never suspend it.
+    wireplumber.extraConfig."51-fosi-k7-no-suspend" = {
+      "monitor.alsa.rules" = [
+        {
+          matches = [
+            { "node.name" = "~alsa_output.usb-Fosi_Audio_Fosi_Audio_K7.*"; }
+            { "node.name" = "~alsa_input.usb-Fosi_Audio_Fosi_Audio_K7.*"; }
+          ];
+          actions.update-props = {
+            "session.suspend-timeout-seconds" = 0;
+            "node.pause-on-idle" = false;
+          };
+        }
+      ];
+    };
+
     # extraConfig.pipewire."99-switch-low-latency" = {
     #   "context.modules" = [
     #     {
